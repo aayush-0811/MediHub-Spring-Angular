@@ -1,0 +1,97 @@
+<div *ngIf="products.length > 0; else emptyCart">
+
+  <form [formGroup]="searchProductForm" class="search-form">
+    <mat-form-field appearance="outline" class="search-input">
+      <mat-label>Enter Keyword to search</mat-label>
+      <input matInput formControlName="title">
+      <button mat-button matSuffix color="primary" [disabled]="searchProductForm.invalid">
+        <mat-icon>search</mat-icon>
+      </button>
+      <mat-error *ngIf="searchProductForm.get('title').invalid">Keyword is required</mat-error>
+    </mat-form-field>
+  </form>
+
+
+  <div class="product-list">
+    <mat-card class="product-card" *ngFor="let product of products">
+      <div class="product-image">
+        <img [src]="product.processedImg" alt="product-image">
+      </div>
+      <div class="product-details">
+        <h2 class="product-name" routerLink="/product/{{product.id}}">{{ product.name }}</h2>
+        <p class="product-description">{{ product.description }}</p>
+
+        <mat-divider></mat-divider>
+
+        <div class="product-info">
+          <div class="info-row">
+            <span class="info-label">Price:</span>
+            <span class="info-value">Rs.{{ product.price }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Category:</span>
+            <span class="info-value">{{ product.categoryName }}</span>
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="actions">
+          <button mat-raised-button color="primary" class="update-button">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <div class="empty-cart">
+    <mat-icon class="icon">remove_shopping_cart</mat-icon>
+    <span>Nothing to see here.</span>
+  </div>
+</ng-template>
+
+
+<!-- <div class="home-container">
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Welcome to Medihub</h1>
+        <p>Your trusted source for high-quality medical supplies.</p>
+        <a routerLink="/register" class="btn btn-primary">Shop Now</a>
+      </div>
+      <div class="hero-image">
+        <img class="logo" src="assets/logo.png" alt="MediHub logo">
+      </div>
+    </section>
+  
+    <section class="about-section">
+      <div class="about-image">
+        <img src="assets/about-image.png" alt="About Us">
+      </div>
+      <div class="about-content">
+        <h2>About Medihub</h2>
+        <p>Medihub is dedicated to providing a wide range of medical supplies including pharmaceuticals, equipment, and everyday essentials. We prioritize quality, affordability, and customer satisfaction.</p>
+        <a routerLink="/login" class="btn btn-primary">Learn More</a>
+      </div>
+    </section>
+  
+    <section class="contact-section">
+        <div class="contact-content">
+          <h2>Contact Us</h2>
+          <p>If you have any questions or need assistance, please don't hesitate to contact our customer support team. We're here to help!</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <mat-icon>email</mat-icon>
+              <span>medihub.tests@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <mat-icon>phone</mat-icon>
+              <span>+1 234 567 890</span>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+   -->
