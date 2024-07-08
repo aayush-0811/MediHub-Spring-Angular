@@ -1,5 +1,5 @@
 
-# MediHub_SpringAngular
+# MediHub_Spring_Angular
 MediHub is a comprehensive application designed to manage medical supplies, orders, and transactions.
 Technologies used: Hibernate for ORM, Spring Boot for backend services, Angular for frontend development, and JWT for authentication and JUnit for Testing.
 
@@ -22,7 +22,7 @@ DataBase:
 # Set Up The Project
 Clone the Repository
 Open your terminal and run the following command:
-https://github.com/Ashima1503/MediHub_SpringAngular.git
+https://github.com/aayush-0811/MediHub-Spring-Angular.git
 
 Backend:
 1. Set Up the Database
