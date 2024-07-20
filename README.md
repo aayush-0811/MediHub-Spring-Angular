@@ -22,7 +22,7 @@ DataBase:
 # Set Up The Project
 Clone the Repository
 Open your terminal and run the following command:
-https://github.com/aayush-0811/MediHub-Spring-Angular.git
+
 
 Backend:
 1. Set Up the Database
